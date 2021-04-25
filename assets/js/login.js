@@ -66,7 +66,7 @@ $(function() {
         var data = $(this).serialize()
         $.ajax({
             method: 'post',
-            url: '/api/login'
+            url: '/api/login',
             data: data,
             success: function(res) {
                 if (res.status !== 0) {
