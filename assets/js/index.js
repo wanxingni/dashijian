@@ -1,4 +1,5 @@
 $(function() {
+    getUserInfo()
 
     function getUserInfo() {
         $.ajax({
@@ -12,13 +13,7 @@ $(function() {
                 renderAvatar(res.data)
             },
 
-            complete: function(res) {
-                console.log(res)
-                if (res.responseJSON.status === 1 && res.responseJSON.message === '身份验证失败') {
-                    localStorage.removeItem('token')
-                    location.href = '/login.html'
-                }
-            }
+
 
         })
     }

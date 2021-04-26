@@ -17,7 +17,8 @@ $(function() {
     // 2.自定义表单校验规则
     layui.form.verify({
         // 密码规则
-        pwd: [/^[\S]{6,12}$/,
+        pwd: [
+            /^[\S]{6,12}$/,
             '密码必须6-12位非空字符'
         ],
         repwd: function(value, item) {
@@ -56,7 +57,9 @@ $(function() {
             }
         })
 
+
     })
+
 
 
     // 4.登录功能
@@ -64,6 +67,7 @@ $(function() {
         e.preventDefault()
 
         var data = $(this).serialize()
+        console.log(data)
         $.ajax({
             method: 'post',
             url: '/api/login',
